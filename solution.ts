@@ -1,5 +1,4 @@
 
-// Solution 1
 function formatValue(value: string | number | boolean): string | number | boolean {
   if (typeof value === "string") {
     return value.toUpperCase();
@@ -17,7 +16,7 @@ function formatValue(value: string | number | boolean): string | number | boolea
 }
 
 
-// Solution 2
+
 function getLength(value: string | any[]): number {
   if (typeof value === "string") {
     return value.length;
@@ -31,7 +30,6 @@ function getLength(value: string | any[]): number {
 }
 
 
-// Solution 3
 class Person {
   name: string;
   age: number;
@@ -46,7 +44,7 @@ class Person {
   }
 }
 
-// Solution 4
+
 interface Item {
   title: string;
   rating: number;
@@ -55,7 +53,7 @@ function filterByRating(items: Item[]): Item[] {
   return items.filter(item => item.rating >= 4);
 }
 
-// Solution 5
+
 interface User {
   id: number;
   name: string;
@@ -67,7 +65,7 @@ function filterActiveUsers(users: User[]): User[] {
   return users.filter(user => user.isActive === true);
 }
 
-//Solution 6
+
 interface Book {
   title: string;
   author: string;
@@ -83,7 +81,7 @@ function printBookDetails(book: Book): void {
 }
 
 
-//Solution 7
+
 function getUniqueValues(
   arr1: (string | number)[],
   arr2: (string | number)[]
@@ -116,7 +114,7 @@ function getUniqueValues(
   return result;
 }
 
-//Solution 8
+
 interface Product {
   name: string;
   price: number;
