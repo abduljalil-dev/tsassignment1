@@ -83,4 +83,61 @@ function printBookDetails(book: Book): void {
 }
 
 
+//Solution 7
+function getUniqueValues(
+  arr1: (string | number)[],
+  arr2: (string | number)[]
+): (string | number)[] {
+  const result: (string | number)[] = [];
+
+
+  function exists(array: (string | number)[], value: string | number): boolean {
+    for (let i = 0; i < array.length; i++) {
+      if (array[i] === value) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  for (let i = 0; i < arr1.length; i++) {
+    if (!exists(result, arr1[i])) {
+      result.push(arr1[i]);
+    }
+  }
+
+
+  for (let i = 0; i < arr2.length; i++) {
+    if (!exists(result, arr2[i])) {
+      result.push(arr2[i]);
+    }
+  }
+
+  return result;
+}
+
+//Solution 8
+interface Product {
+  name: string;
+  price: number;
+  quantity: number;
+  discount?: number; // optional percentage (0–100)
+}
+
+function calculateTotalPrice(products: Product[]): number {
+  if (products.length === 0) return 0;
+
+  return products
+    .map(product => {
+      let total = product.price * product.quantity;
+
+      if (product.discount !== undefined) {
+        const discountAmount = (total * product.discount) / 100;
+        total -= discountAmount;
+      }
+
+      return total;
+    })
+    .reduce((sum, current) => sum + current, 0);
+}
 
