@@ -32,7 +32,6 @@ function getLength(value: string | any[]): number {
 
 
 // Problem 3
-
 class Person {
   name: string;
   age: number;
@@ -45,6 +44,15 @@ class Person {
   getDetails(): string {
     return `Name: ${this.name}, Age: ${this.age}`;
   }
+}
+
+// Problem 4
+interface Item {
+  title: string;
+  rating: number;
+}
+function filterByRating(items: Item[]): Item[] {
+  return items.filter(item => item.rating >= 4);
 }
 
 
